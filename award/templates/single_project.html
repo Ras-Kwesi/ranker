@@ -48,7 +48,8 @@
     </div>
     <div id="the_form">
     {% if user.is_authenticated %}
-    <form  action="/project/{{project.id}}" method="post" enctype="multipart/form-data">
+    <button class="btn btn-danger" id="add_comment">Add Comment</button>
+    <form id="commentation" action="/project/{{project.id}}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         {% bootstrap_form voting_form %}
@@ -60,4 +61,8 @@
 
 </div>
 
+{% endblock %}
+{% block scripts %} {{block.super}}
+{% load static %}
+  <script type="text/javascript" src="{%static 'js/comment.js'%}"></script>
 {% endblock %}

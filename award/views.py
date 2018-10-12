@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
@@ -92,4 +93,16 @@ def project(request,id):
 
     return render(request,'single_project.html',{'project':project, 'voting_form':voting_form})
 
+# @login_required(login_url='/accounts/login/')
+# def project(request,id):
+#     current_user = request.user
+#     project = Project.objects.get(id=id)
+#     voting_form = NewVote()
+#
+#     return render(request,'single_project.html',{'project':project, 'voting_form':voting_form})
 
+def comment(request):
+    designvote = request.POST.get('designvote')
+    usabilityvote = request.POST.get("usabilityvote")
+    creativityvote = request.POST.get('creativityvote')
+    contentvote = request.POST.get('contentvote')
