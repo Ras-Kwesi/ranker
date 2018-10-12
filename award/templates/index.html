@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% load bootstrap4 %}
+{% block content %}
+
+{% for project in projects %}
+<div class="col-md-5">
+    <div class="card border-danger mb-3">
+        <div class="card-header bg-transparent border-danger">{{project.projectname}}</div>
+        <img class="card-img-top" id="projectimage" src="{{project.image1.url}}">
+        <div class="card-body text-success">
+            <h1 class="card-title">By {{project.profile.username}}</h1>
+            <p class="card-text">{{project.overview | 20}}</p>
+            <button class="card-footer bg-transparent border-danger">Visit this page</button>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+
+
+{% endblock %}
