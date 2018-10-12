@@ -75,3 +75,20 @@ def update(request):
         "profile_form": profile_form
     })
 
+@login_required(login_url='/accounts/login/')
+def project(request,id):
+    current_user = request.user
+    project = Project.objects.get(id=id)
+    if request.method == 'POST':
+        voting_form = NewVote(request.POST)
+        if voting_form.is_valid():
+            vote = voting_form.save(commit=False)
+            vote.profile = current_user
+            vote.save()
+        return redirect('project')
+    else:
+        voting_form = NewVote()
+
+    return render(request,'single_project.html',{'project':project, 'voting_form':voting_form})
+
+
