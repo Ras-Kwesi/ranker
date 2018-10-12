@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
@@ -70,22 +71,34 @@ class Project(models.Model):
 
 
 class Design(models.Model):
-    designvotes = models.IntegerField(default=0)
+    designvote = models.IntegerField(
+        default=1,
+        validators=[MaxValueValidator(10), MinValueValidator(1)]
+     )
     design_voter = models.ForeignKey(User, on_delete=models.CASCADE)
     design_project = models.ForeignKey(Project,related_name='designvote')
 
 
 class Usability(models.Model):
-    usabilityvotes = models.IntegerField(default=0)
+    usabilityvote = models.IntegerField(
+        default=1,
+        validators=[MaxValueValidator(10), MinValueValidator(1)]
+     )
     usability_voter = models.ForeignKey(User, on_delete=models.CASCADE)
     userbility_project = models.ForeignKey(Project, related_name='usabilityvote')
 
 class Creativity(models.Model):
-    creativityvotes = models.IntegerField(default=0)
+    creativityvote = models.IntegerField(
+        default=1,
+        validators=[MaxValueValidator(10), MinValueValidator(1)]
+     )
     creativity_voter = models.ForeignKey(User, on_delete=models.CASCADE)
     creativity_project = models.ForeignKey(Project, related_name='creativityvote')
 
 class Content(models.Model):
-    contentvotes = models.IntegerField(default=0)
+    contentvote = models.IntegerField(
+        default=1,
+        validators=[MaxValueValidator(10), MinValueValidator(1)]
+     )
     content_voter = models.ForeignKey(User, on_delete=models.CASCADE)
     content_project = models.ForeignKey(Project, related_name='contentvote')
