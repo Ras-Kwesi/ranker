@@ -44,6 +44,7 @@ class Project(models.Model):
     image3 = models.ImageField(upload_to='picture/', blank=True)
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.IntegerField(default=0)
+    url = models.CharField(max_length=40,blank=True)
 
 
 
