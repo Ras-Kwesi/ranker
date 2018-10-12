@@ -3,6 +3,20 @@ jQuery(document).ready(function(){
     event.preventDefault()
     voting_form = $("voting_form")
 
+    $.ajax({
+     'url':'/ajax/comment',
+     'type':'POST',
+     'data':form.serialize(),
+     'dataType':'json',
+     'success': function(data){
+      alert(data['success'])
+      },
+     })
+    $('#id_designvote').val('')
+    $('#id_usabilitynvote').val('')
+    $('#id_creativityvote').val('')
+    $('#id_contentvote').val('')
+
    })
    $('#add_comment').click(function(event){
     $('#commentation').show()

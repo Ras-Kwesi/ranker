@@ -12,7 +12,7 @@ urlpatterns = [
     url('^new_post/', views.new_post, name='new_post'),
     url('update/$', views.update, name='update'),
     url('project/(\d+)',views.project, name='project'),
-    url(r'^ajax/comment/$',views.comment,name='comment'),
+    url(r'^ajax/vote/$',views.vote,name='vote'),
 
 ]
 
