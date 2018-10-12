@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
+from django.db import transaction
 
 
 # Create your views here.
@@ -51,3 +52,25 @@ def search(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
+@login_required(login_url='/accounts/login/')
+@transaction.atomic
+def update(request):
+    # current_user = User.objects.get(pk=user_id)
+    current_user=request.user
+    if request.method == 'POST':
+        user_form = EditUser(request.POST, request.FILES,instance=request.user)
+        profile_form = EditProfile(request.POST, request.FILES,instance=current_user.profile)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            profile_form.save()
+            user_form.save()
+        return redirect('profile')
+
+    else:
+        user_form = EditUser(instance=request.user)
+        profile_form = EditProfile(instance=current_user.profile)
+    return render(request, 'update_profile.html', {
+        "user_form": user_form,
+        "profile_form": profile_form
+    })
