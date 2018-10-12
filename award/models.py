@@ -71,35 +71,22 @@ class Project(models.Model):
         return comments,posters
 
 
-class Design(models.Model):
+class Vote(models.Model):
     designvote = models.IntegerField(
         default=1,
         validators=[MaxValueValidator(10), MinValueValidator(1)]
      )
-    design_voter = models.ForeignKey(User, on_delete=models.CASCADE)
-    design_project = models.ForeignKey(Project,related_name='designvote')
-
-
-class Usability(models.Model):
     usabilityvote = models.IntegerField(
         default=1,
         validators=[MaxValueValidator(10), MinValueValidator(1)]
-     )
-    usability_voter = models.ForeignKey(User, on_delete=models.CASCADE)
-    userbility_project = models.ForeignKey(Project, related_name='usabilityvote')
-
-class Creativity(models.Model):
+    )
     creativityvote = models.IntegerField(
         default=1,
         validators=[MaxValueValidator(10), MinValueValidator(1)]
-     )
-    creativity_voter = models.ForeignKey(User, on_delete=models.CASCADE)
-    creativity_project = models.ForeignKey(Project, related_name='creativityvote')
-
-class Content(models.Model):
+    )
     contentvote = models.IntegerField(
         default=1,
         validators=[MaxValueValidator(10), MinValueValidator(1)]
-     )
-    content_voter = models.ForeignKey(User, on_delete=models.CASCADE)
-    content_project = models.ForeignKey(Project, related_name='contentvote')
+    )
+    voter = models.ForeignKey(User, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project,related_name='vote')
