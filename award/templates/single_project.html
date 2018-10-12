@@ -41,14 +41,21 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <form  action="{% url 'project' %}" method="post" enctype="multipart/form-data">
-        {%csrf_token%}
+    <div class="description">
+        <h1 id="name">{{project.profile.username}}</h1>
+        <p>{{project.overview}}</p>
+        <button class="btn btn-outline-danger" id='likes'>{{project.likes}}</button>
+    </div>
+    {% if user.is_authenticated %}
+    <form  action="/project/{{project.id}}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
 
         {% bootstrap_form voting_form %}
         <input type="submit" class="btn btn-danger btn-lg" value="Post">
     </form>
-
+    {% endif %}
 
 
 </div>
 
+{% endblock %}

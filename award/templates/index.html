@@ -6,10 +6,10 @@
 <div class="col-md-5">
     <div class="card border-danger mb-3">
         <div class="card-header bg-transparent border-danger">{{project.projectname}}</div>
-        <img class="card-img-top" id="projectimage" src="{{project.image1.url}}">
+        <a href="/project/{{project.id}}"><img class="card-img-top" id="projectimage" src="{{project.image1.url}}" alt="image couldnt load"></a>
         <div class="card-body text-success">
             <h1 class="card-title">By {{project.profile.username}}</h1>
-            <p class="card-text">{{project.overview | 20}}</p>
+            <p class="card-text">{{project.overview|truncatechars:50}}</p>
             <button class="card-footer bg-transparent border-danger">Visit this page</button>
         </div>
     </div>

@@ -6,11 +6,14 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url('^$',views.index,name='index'),
-    # url('^review/(\d+)',views.review, name='stalk'),
-    url('^search/', views.search, name='explore'),
+    # url('^review/(\d+)',views.review, name='review'),
+    url('^search/', views.search, name='search'),
     url('profile/$', views.profile, name='profile'),
     url('^new_post/', views.new_post, name='new_post'),
     url('update/$', views.update, name='update'),
-    url('project/(\d+)',views.project, name='project')
+    url('project/(\d+)',views.project, name='project'),
 
 ]
+
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -83,7 +83,7 @@ def project(request,id):
         voting_form = NewVote(request.POST)
         if voting_form.is_valid():
             vote = voting_form.save(commit=False)
-            vote.profile = current_user
+            vote.voter = current_user
             vote.save()
         return redirect('project')
     else:
