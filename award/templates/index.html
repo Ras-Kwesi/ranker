@@ -10,7 +10,9 @@
         <div class="card-body text-success">
             <h1 class="card-title">By {{project.profile.username}}</h1>
             <p class="card-text">{{project.overview|truncatechars:50}}</p>
-            <button class="card-footer bg-transparent border-danger">Visit this page</button>
+            <div class="card-footer bg-transparent border-danger">
+                <a class="btn btn-outline-danger" href="{{project.url}}">Visit this website</a>
+            </div>
         </div>
     </div>
 </div>
