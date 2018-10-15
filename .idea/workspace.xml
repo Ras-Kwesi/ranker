@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10054968-54b9-4bab-8556-63271b63a235" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/award/static/js/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/award/static/js/comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/award/serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/award/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/award/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ranker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ranker/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,7 @@
           <entry key="html" value="20" />
           <entry key="js" value="2" />
           <entry key="md" value="1" />
-          <entry key="py" value="12" />
+          <entry key="py" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -42,7 +42,7 @@
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="12" />
+          <entry key="Python" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -50,7 +50,7 @@
           <entry key="css" value="13" />
           <entry key="html" value="1369" />
           <entry key="js" value="328" />
-          <entry key="py" value="1697" />
+          <entry key="py" value="1925" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -58,7 +58,7 @@
           <entry key="CSS" value="13" />
           <entry key="HTML" value="1369" />
           <entry key="JavaScript" value="328" />
-          <entry key="Python" value="1697" />
+          <entry key="Python" value="1925" />
         </counts>
       </usages-collector>
     </session>
@@ -67,16 +67,14 @@
     <splitter split-orientation="horizontal" split-proportion="0.5231054">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/award/views.py">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/award/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1620">
-                  <caret line="113" column="17" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+                <state relative-caret-position="570">
+                  <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
                   <folding>
-                    <element signature="e#0#36#0" expanded="true" />
-                    <marker date="1539377648753" expanded="true" signature="304:309" ph="..." />
-                    <marker date="1539377648753" expanded="true" signature="3410:3411" ph="..." />
-                    <marker date="1539377648753" expanded="true" signature="3410:3415" ph="..." />
+                    <element signature="e#0#28#0" expanded="true" />
+                    <marker date="1539349115887" expanded="true" signature="2233:2238" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -153,7 +151,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/award/static/js/comment.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="103">
@@ -176,13 +174,15 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/award/models.py">
+            <entry file="file://$PROJECT_DIR$/award/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="196">
-                  <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+                <state relative-caret-position="120">
+                  <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
                   <folding>
-                    <element signature="e#0#28#0" expanded="true" />
-                    <marker date="1539349115887" expanded="true" signature="2233:2238" ph="..." />
+                    <element signature="e#0#36#0" expanded="true" />
+                    <marker date="1539590247620" expanded="true" signature="416:421" ph="..." />
+                    <marker date="1539590247620" expanded="true" signature="3522:3523" ph="..." />
+                    <marker date="1539590247620" expanded="true" signature="3522:3527" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -209,8 +209,22 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ranker/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1935">
-                  <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+                <state relative-caret-position="438">
+                  <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/award/serializer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="14" selection-start-line="14" selection-end-line="14" />
+                  <folding>
+                    <element signature="e#0#38#0" expanded="true" />
+                    <marker date="1539590149714" expanded="true" signature="115:120" ph="..." />
+                    <marker date="1539590149714" expanded="true" signature="232:237" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -246,7 +260,6 @@
         <option value="$PROJECT_DIR$/award/templates/update_profile.html" />
         <option value="$PROJECT_DIR$/award/models.py" />
         <option value="$PROJECT_DIR$/award/forms.py" />
-        <option value="$PROJECT_DIR$/ranker/settings.py" />
         <option value="$PROJECT_DIR$/award/templates/navbar.html" />
         <option value="$PROJECT_DIR$/award/templates/base.html" />
         <option value="$PROJECT_DIR$/award/templates/index.html" />
@@ -254,6 +267,8 @@
         <option value="$PROJECT_DIR$/award/templates/single_project.html" />
         <option value="$PROJECT_DIR$/award/urls.py" />
         <option value="$PROJECT_DIR$/award/static/js/comment.js" />
+        <option value="$PROJECT_DIR$/ranker/settings.py" />
+        <option value="$PROJECT_DIR$/award/serializer.py" />
         <option value="$PROJECT_DIR$/award/views.py" />
       </list>
     </option>
@@ -281,25 +296,6 @@
               <item name="ranker" type="b2602c69:ProjectViewProjectNode" />
               <item name="ranker" type="462c0819:PsiDirectoryNode" />
               <item name="award" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ranker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ranker" type="462c0819:PsiDirectoryNode" />
-              <item name="award" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ranker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ranker" type="462c0819:PsiDirectoryNode" />
-              <item name="award" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ranker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ranker" type="462c0819:PsiDirectoryNode" />
-              <item name="award" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ranker" type="b2602c69:ProjectViewProjectNode" />
@@ -345,7 +341,7 @@
     <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1444386" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1444386" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -356,7 +352,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.33054394" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.33054394" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -364,7 +360,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1444386" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -435,19 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/award/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="113" column="17" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <marker date="1539377648753" expanded="true" signature="304:309" ph="..." />
-            <marker date="1539377648753" expanded="true" signature="3410:3411" ph="..." />
-            <marker date="1539377648753" expanded="true" signature="3410:3415" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/award/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -512,35 +495,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/award/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1539349115887" expanded="true" signature="2233:2238" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/award/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="74" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/award/static/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ranker/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -555,6 +513,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
           <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ranker/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/award/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="74" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/award/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1539349115887" expanded="true" signature="2233:2238" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/award/serializer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <marker date="1539590149714" expanded="true" signature="115:120" ph="..." />
+            <marker date="1539590149714" expanded="true" signature="232:237" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/award/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <marker date="1539590247620" expanded="true" signature="416:421" ph="..." />
+            <marker date="1539590247620" expanded="true" signature="3522:3523" ph="..." />
+            <marker date="1539590247620" expanded="true" signature="3522:3527" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

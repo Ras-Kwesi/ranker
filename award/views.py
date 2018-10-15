@@ -4,9 +4,16 @@ from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import *
 
 
 # Create your views here.
+
+
+
+
 
 def index(request):
     projects = Project.objects.all()
