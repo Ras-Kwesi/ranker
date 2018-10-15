@@ -15,5 +15,8 @@ class UserSerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        exclude = []
+        # exclude = ['image1','image2','image3','profile',]
+        fields = ['projectname','overview','likes','url','profile']
+
+
 
