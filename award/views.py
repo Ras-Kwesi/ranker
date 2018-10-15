@@ -96,43 +96,45 @@ def update(request):
         "profile_form": profile_form
     })
 
-# @login_required(login_url='/accounts/login/')
-# def project(request,id):
-#     current_user = request.user
-#     project = Project.objects.get(id=id)
-#     if request.method == 'POST':
-#         voting_form = NewVote(request.POST)
-#         if voting_form.is_valid():
-#             vote = voting_form.save(commit=False)
-#             vote.voter = current_user
-#             vote.project = project
-#             vote.save()
-#         return redirect('index')
-#     else:
-#         voting_form = NewVote()
-#
-#     return render(request,'single_project.html',{'project':project, 'voting_form':voting_form})
-
 @login_required(login_url='/accounts/login/')
 def project(request,id):
     current_user = request.user
     project = Project.objects.get(id=id)
-    voting_form = NewVote()
+    # averagevote = Vote.averagescore(id=id)
+    if request.method == 'POST':
+        voting_form = NewVote(request.POST)
+        if voting_form.is_valid():
+            vote = voting_form.save(commit=False)
+            vote.voter = current_user
+            vote.project = project
+            vote.save()
+        return redirect('index')
+    else:
+        voting_form = NewVote()
 
-    return render(request,'single_project.html',{'project':project, 'voting_form':voting_form})
+    return render(request,'single_project.html',{'project':project,
+                                                 'voting_form':voting_form})
 
-def vote(request):
-    designvote = request.POST.get('Designvote')
-    usabilityvote = request.POST.get("Usabilityvote")
-    creativityvote = request.POST.get('Creativityvote')
-    contentvote = request.POST.get('Contentvote')
+# @login_required(login_url='/accounts/login/')
+# def project(request,id):
+#     current_user = request.user
+#     project = Project.objects.get(id=id)
+#     voting_form = NewVote()
+#
+#     return render(request,'single_project.html',{'project':project, 'voting_form':voting_form})
 
-    vote = Vote(designvote = designvote,
-                usabilityvote = usabilityvote,
-                creativityvote = creativityvote,
-                contentvote = contentvote,
-                )
-    vote.save()
-    data = {'success':'Thank you for voting'}
-
-    return JsonResponse(data)
+# def vote(request):
+#     designvote = request.POST.get('Designvote')
+#     usabilityvote = request.POST.get("Usabilityvote")
+#     creativityvote = request.POST.get('Creativityvote')
+#     contentvote = request.POST.get('Contentvote')
+#
+#     vote = Vote(designvote = designvote,
+#                 usabilityvote = usabilityvote,
+#                 creativityvote = creativityvote,
+#                 contentvote = contentvote,
+#                 )
+#     vote.save()
+#     data = {'success':'Thank you for voting'}
+#
+#     return JsonResponse(data)

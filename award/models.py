@@ -90,3 +90,11 @@ class Vote(models.Model):
     )
     voter = models.ForeignKey(User, on_delete=models.CASCADE)
     project = models.ForeignKey(Project,related_name='vote')
+
+
+    @classmethod
+    def averagescore(cls,id):
+        vote = cls.objects.filter(project__id = id)
+        total = (vote.designvote + vote.usabilityvote + vote.creativityvote + vote.contentvote) / 4
+        return total
+
