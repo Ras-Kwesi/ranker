@@ -11,6 +11,11 @@ from .serializer import *
 
 # Create your views here.
 
+class ProfileList(APIView):
+    def get(self,request,format=None):
+        profiles = Profile.objects.all()
+        serializers = ProfileSerializer(profiles,many=True)
+        return Response(serializers.data)
 
 
 
