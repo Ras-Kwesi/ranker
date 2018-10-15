@@ -229,11 +229,6 @@
             <path>
               <item name="ranker" type="b2602c69:ProjectViewProjectNode" />
               <item name="ranker" type="462c0819:PsiDirectoryNode" />
-              <item name="award" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ranker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ranker" type="462c0819:PsiDirectoryNode" />
               <item name="ranker" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -486,13 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/runtime.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -521,6 +509,13 @@
           <folding>
             <element signature="e#308#317#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
