@@ -64,7 +64,8 @@ def search(request):
 
     if 'project' in request.GET and request.GET["project"]:
         search_query = request.GET.get("project")
-        searched_projects = Project.objects.filter(user__username=search_query)
+        searched_projects = Project.objects.filter(projectname=search_query)
+        print (search_query)
         message = f"{search_query}"
         print(searched_projects)
 
