@@ -4,16 +4,16 @@ jQuery(document).ready(function(){
     voting_form = $("voting_form")
 
     $.ajax({
-     'url':'/ajax/comment',
+     'url':'/ajax/vote',
      'type':'POST',
-     'data':form.serialize(),
+     'data':voting_form.serialize(),
      'dataType':'json',
      'success': function(data){
       alert(data['success'])
       },
      })
     $('#id_designvote').val('')
-    $('#id_usabilitynvote').val('')
+    $('#id_usabilityvote').val('')
     $('#id_creativityvote').val('')
     $('#id_contentvote').val('')
 

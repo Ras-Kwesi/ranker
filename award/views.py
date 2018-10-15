@@ -102,10 +102,10 @@ def project(request,id):
     return render(request,'single_project.html',{'project':project, 'voting_form':voting_form})
 
 def vote(request):
-    designvote = request.POST.get('designvote')
-    usabilityvote = request.POST.get("usabilityvote")
-    creativityvote = request.POST.get('creativityvote')
-    contentvote = request.POST.get('contentvote')
+    designvote = request.POST.get('Designvote')
+    usabilityvote = request.POST.get("Usabilityvote")
+    creativityvote = request.POST.get('Creativityvote')
+    contentvote = request.POST.get('Contentvote')
 
     vote = Vote(designvote = designvote,
                 usabilityvote = usabilityvote,
