@@ -6,6 +6,11 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         exclude = []
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username','email',]
+
 
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:

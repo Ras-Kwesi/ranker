@@ -14,10 +14,18 @@ from .serializer import *
 class ProfileList(APIView):
     def get(self,request,format=None):
         profiles = Profile.objects.all()
+        users = User.objects.all()
         serializers = ProfileSerializer(profiles,many=True)
+        serializer =  UserSerializer(users,many=True)
+
         return Response(serializers.data)
 
+class ProjectList(APIView):
+    def get(self,request,format=None):
+        projects =Project.objects.all()
+        serialized = ProfileSerializer(projects,many=True)
 
+        return Response(serialized.data)
 
 
 def index(request):
