@@ -54,7 +54,7 @@ Create a .env file and add the following configutions to it
 ```python
 SECRET_KEY= #secret key will be added by default
 DEBUG= #set to false in production
-DB_NAME= #database name
+DB_NAME=#database name
 DB_USER= #database user
 DB_PASSWORD=#database password
 DB_HOST="127.0.0.1"

@@ -103,3 +103,9 @@ class Vote(models.Model):
             score_total = score_total + x
         return (score_total/len(votes))
 
+    def save_vote(self):
+        self.save()
+
+
+    def delete_vote(self):
+        self.delete()
