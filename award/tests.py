@@ -1,23 +1,23 @@
 from django.test import TestCase
 from .models import *
+from django.contrib.auth.models import User
 
 # Create your tests here.
 
 class ProfileTest(TestCase):
     def setUp(self):
         self.user = User(username = 'Ras_Kwesi', email = 'ras@ras.com', password = 'passwadd')
+        self.user.save()
         self.ras = Profile(bio = 'A python Programmer',contact = '054234444', user = self.user)
 
     def tearDown(self):
-        self.user.delete()
-        self.ras.delete()
+        Profile.objects.all().delete()
 
     def test_instance(self):
         self.assertTrue(isinstance(self.ras,Profile))
-        self.assertTrue(isinstance(self.user,User))
 
     def test_save(self):
-        self.ras.create_user_profile()
+        self.ras.create_user_profile(self.user,True)
         self.ras.save_user_profile(self.user)
         users = Profile.objects.all()
         self.assertTrue(len(users)>0)
@@ -31,9 +31,9 @@ class ProjectTest(TestCase):
                             profile = self.user, url='westalk.com')
 
     def tearDown(self):
-        self.user.delete()
-        self.ras.delete()
+        Profile.objects.all().delete()
         self.gram.delete()
+
 
     def test_save(self):
         self.gram.save_project()
@@ -47,13 +47,12 @@ class VoteTest(TestCase):
         self.ras = Profile(bio='A python Programmer', contact='054234444', user=self.user)
         self.gram = Project(projectname='igclone', overview='A clone of Instagram',
                             profile=self.user, url='westalk.com')
-        self.vetting = Vote(designvote =1, usabilityvote = 6, creativityvote = 7, contentvote = 8,)
-
+        self.vetting = Vote(designvote =1, usabilityvote = 6, creativityvote = 7,
+                            contentvote = 8, voter = self.user, project = self.gram)
     def tearDown(self):
-        self.user.delete()
-        self.ras.delete()
-        self.gram.delete()
+        Profile.objects.all().delete()
         self.vetting.delete()
+        self.gram.delete()
 
 
     def test_save_vote(self):
