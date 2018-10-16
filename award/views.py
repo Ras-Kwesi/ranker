@@ -101,7 +101,7 @@ def update(request):
 def project(request,id):
     current_user = request.user
     project = Project.objects.get(id=id)
-    # averagevote = Vote.averagescore(id=id)
+    averagevote = Vote.averagescore(id=id)
     if request.method == 'POST':
         voting_form = NewVote(request.POST)
         if voting_form.is_valid():

@@ -13,16 +13,15 @@ A web application where users create profile through which they can post photos,
 5. Interact with pictures through likin them and commenting.
 
 ## Models
-### Image 
-* Properties: Image Name, caption, likes Foreign Key and Profile Foreign Key, Image path.
+### Project 
+* Properties: Project Name, Project Information, Images(3), Profile FK, Likes, URL.
 
 ### Profile 
 * Properties: Profile Picture, Bio, location, Django User Relationship, Contact
 
-### Comment
-* Properties: Comments, Commentator, Image_Commented
+### Vote
+* Properties: Design Vote, Usability Vote, Content Vote, Creativity Vote.
 
-### Follow
 
 ## Admin Dashboard
 Use django admin to post photos to the database and manage the photos
@@ -36,7 +35,7 @@ This project was created on a debian linux platform but should work on other uni
 
 ### Cloning the repository
 ```bash
-git clone https://github.com/Ras-Kwesi/photogram.git && cd photogram
+git clone https://github.com/Ras-Kwesi/ranker.git && cd ranker
 ```
 
 ### Creating a virtual environment
@@ -80,7 +79,7 @@ python manage.py runserver
 ```
 ## Contributing
 
-- Git clone [https://github.com/Ras-Kwesi/photogram.git](https://github.com/Ras-Kwesi/photogram.git) 
+- Git clone [https://github.com/Ras-Kwesi/ranker.git](https://github.com/Ras-Kwesi/ranker.git) 
 - Make the changes.
 - Write your tests.
 - If everything is OK. push your changes and make a pull request.
@@ -92,7 +91,7 @@ Set the configuration to production mode
 ## Live Demo
 
 The web app can be accessed from the following link: 
-[Westalk](https://westalk.herokuapp.com/)
+[Website Ranker](https://websiteranker.herokuapp.com/)
 
 
 ## Technology used

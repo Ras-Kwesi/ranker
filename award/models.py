@@ -94,7 +94,12 @@ class Vote(models.Model):
 
     @classmethod
     def averagescore(cls,id):
-        vote = cls.objects.filter(project__id = id)
-        total = (vote.designvote + vote.usabilityvote + vote.creativityvote + vote.contentvote) / 4
-        return total
+        votes = cls.objects.filter(project__id = id)
+        # total = (vote.designvote + vote.usabilityvote + vote.creativityvote + vote.contentvote) / 4
+        score_total = 0
+        for vote in votes:
+            y = vote['Vote']
+            x = sum(vote)
+            score_total = score_total + x
+        return (score_total/len(votes))
 
